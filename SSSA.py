@@ -253,32 +253,39 @@ with tab1:
 
     weiter = zeige_k_warnung(k, n)
 
-    verwende_eigene_p = st.checkbox("📌 Ich möchte eine eigene Primzahl verwenden")
-
     eigene_p_gueltig = True
     p = None
     validierungsfehler = ""
 
-    if verwende_eigene_p:
-        p_input = st.number_input("Eigene Primzahl (p)", value=0, step=1)
-        if p_input > 0:
-            if not is_prim(p_input):
-                eigene_p_gueltig = False
-                validierungsfehler = "❌ Die Zahl ist keine Primzahl."
-            elif p_input <= max(s, n):
-                eigene_p_gueltig = False
-                validierungsfehler = f"❌ Die Primzahl muss größer als s = {s} und n = {n} sein."
-            else:
-                p = p_input
-        else:
-            eigene_p_gueltig = False
-            validierungsfehler = "🪶 Bitte gib eine Primzahl ein."
+    if weiter:
+        verwende_eigene_p = st.checkbox("📌 Ich möchte eine eigene Primzahl verwenden")
 
-        if not eigene_p_gueltig:
-            st.error(validierungsfehler)
+        if verwende_eigene_p:
+            p_input = st.number_input("Eigene Primzahl (p)", value=0, step=1)
+            if p_input > 0:
+                if not is_prim(p_input):
+                    eigene_p_gueltig = False
+                    validierungsfehler = "❌ Die Zahl ist keine Primzahl."
+                elif p_input <= max(s, n):
+                    eigene_p_gueltig = False
+                    validierungsfehler = f"❌ Die Primzahl muss größer als s = {s} und n = {n} sein."
+                else:
+                    p = p_input
+            else:
+                eigene_p_gueltig = False
+                validierungsfehler = "🪶 Bitte gib eine Primzahl ein."
+
+            if not eigene_p_gueltig:
+                st.error(validierungsfehler)
+        else:
+            p = next_prim(s, n, k)
+            st.info(f"💡 Automatisch berechnete Primzahl: p = {p}")
     else:
-        p = next_prim(s, n, k)
-        st.info(f"💡 Automatisch berechnete Primzahl: p = {p}")
+        p = None
+        eigene_p_gueltig = False
+
+
+       
         
         
 
