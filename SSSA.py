@@ -305,8 +305,8 @@ with tab2:
         st.subheader("🔎 Geheimnis rekonstruieren")
 
         punkte_input = st.text_input("📥 Wertepunkte (x,y;x,y;...)", value="1,45;2,63;3,28")
-        p = st.number_input("Primzahl (p)", min_value=2, value=89)
-        k = st.number_input("Benötigte Anteile (k)", min_value=2, value=3)
+        p = st.number_input("Primzahl (p)", min_value=1, value=89)
+        k = st.number_input("Benötigte Anteile (k)", min_value=1, value=3)
 
         try:
             punkte = [tuple(map(int, pair.split(","))) for pair in punkte_input.split(";") if pair.strip()]
