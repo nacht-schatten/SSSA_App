@@ -234,7 +234,7 @@ with tab1:
 
     s = st.number_input("Geheimnis (s)", min_value=0, value=123)
     k = st.number_input("Benötigte Anteile (k)", min_value=1, value=3)
-    n = st.number_input("Gesamtanzahl Anteile (n)", min_value=k, value=5)
+    n = st.number_input("Gesamtanzahl Anteile (n)", min_value=0, value=5)
     d = n-k
 
     def zeige_k_warnung(k, n):
