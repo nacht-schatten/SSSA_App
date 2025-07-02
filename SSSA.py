@@ -323,7 +323,7 @@ with tab2:
             max_val = max(werte_flat, default=0)
 
             if p <= max_val:
-                return False, f"❌ Verdacht auf fehlerhafte Primzahl! **p** muss größer als {max_val} sein."
+                return False, f"❌ Verdacht auf fehlerhafte Primzahl! **p** muss größer als **{max_val}** sein."
 
             return True, ""
         
