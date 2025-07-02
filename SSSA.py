@@ -279,7 +279,7 @@ with tab1:
                 st.error(validierungsfehler)
         else:
             p = next_prim(s, n, k)
-            st.info(f"💡 Automatisch berechnete Primzahl: p = {p}\n\n" + f"(Die nächstgrößere Primzahl zu *{s}* und *{n}*.)")
+            st.info(f"💡 Automatisch berechnete Primzahl: p = {p}\n\n" + f"(Die nächstgrößere Primzahl zu **s={s}** und **n={n}**.)")
     else:
         p = None
         eigene_p_gueltig = False
