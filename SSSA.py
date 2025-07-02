@@ -233,7 +233,7 @@ with tab1:
     st.subheader("➕ Anteile generieren")
 
     s = st.number_input("Geheimnis (s)", min_value=0, value=123)
-    k = st.number_input("Benötigte Anteile (k)", min_value=2, value=3)
+    k = st.number_input("Benötigte Anteile (k)", min_value=1, value=3)
     n = st.number_input("Gesamtanzahl Anteile (n)", min_value=1, value=5)
     d = n-k
 
