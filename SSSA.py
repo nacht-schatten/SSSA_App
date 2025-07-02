@@ -239,13 +239,13 @@ with tab1:
 
     def zeige_k_warnung(k, n):
         if k > n:
-            st.error("❌ k darf nicht größer als n sein!")
+            st.error("❌ *k* darf nicht größer als *n* sein!")
             return False
         elif k <= n * 0.3:
             st.warning("⚠️ Angreiferrisiko: k ist sehr klein!\n\n" + f"\n Ein Angreifer braucht nur **{k}** von **{n}** Anteilen, um das Geheimnis zu erfahren!")
         
         elif k >= n - 2:
-            st.warning("⚠️ Ausfallsrisiko: k ist sehr groß!\n\n" + "Verlorene oder fehlerhafte Anteile gefährden hier schnell die Rekonstruierbarkeit des Geheimnisses!")
+            st.warning("⚠️ Ausfallsrisiko: k ist sehr groß!\n\n" + "**Verlorene oder fehlerhafte Anteile** gefährden hier schnell die **Rekonstruierbarkeit** des Geheimnisses!")
                        
         else:
             st.success("✅ k ist gut gewählt. Eine gute Balance zwischen Sicherheit und Verfügbarkeit!")
@@ -279,7 +279,7 @@ with tab1:
                 st.error(validierungsfehler)
         else:
             p = next_prim(s, n, k)
-            st.info(f"💡 Automatisch berechnete Primzahl: *p = {p}*\n\n" + f"(Die nächstgrößere Primzahl zu *s = {s}* und *n = {n}*)")
+            st.info(f"💡 Automatisch berechnete Primzahl: *p = {p}*\n\n" + f"(nächstgrößere Primzahl zu *s = {s}* und *n = {n}*)")
     else:
         p = None
         eigene_p_gueltig = False
@@ -293,7 +293,7 @@ with tab1:
     if weiter and (not verwende_eigene_p or eigene_p_gueltig):
         if st.button("🔐 Anteile generieren"):
             shares = anteile_generieren(s, k, n, p)
-            st.success(f"✅ Anteile erfolgreich erzeugt! Verwendete Primzahl p = {p}")
+            st.success(f"✅ Anteile erfolgreich erzeugt! Verwendete Primzahl *p = {p}*")
             st.code(" ; ".join(f"{x},{y}" for x, y in shares), language="text")
 
             
@@ -323,7 +323,7 @@ with tab2:
             max_val = max(werte_flat, default=0)
 
             if p <= max_val:
-                return False, f"❌ Verdacht auf fehlerhafte Primzahl! p muss größer als {max_val} sein."
+                return False, f"❌ Verdacht auf fehlerhafte Primzahl! **p** muss größer als {max_val} sein."
 
             return True, ""
         
@@ -334,7 +334,7 @@ with tab2:
         if not ist_gueltig:
             st.error(fehlertext)
         elif len(punkte) < k:
-            st.warning(f"⚠️ Du brauchst mindestens {k} Anteile für die Rekonstruktion.")
+            st.warning(f"⚠️ Du brauchst mindestens **{k}** Anteile für die Rekonstruktion.")
         elif st.button("🧩 Rekonstruktion starten"):
             try:
                 s_guess, konsistent, stimmen = konsistenzpruefung(punkte, k, p)
@@ -350,9 +350,9 @@ with tab2:
                     st.info("💡 **Tipp:** Füge einen weiteren Anteil hinzu, um eine Entscheidung zu ermöglichen.")
                 
                 elif konsistent:
-                    st.success(f"✅ Geheimnis erfolgreich rekonstruiert: s = {s_guess}")
+                    st.success(f"✅ Geheimnis erfolgreich rekonstruiert: **s = {s_guess}**")
                 else:
-                    st.warning(f"⚠️ Nicht eindeutig: häufigstes s = {s_guess}")
+                    st.warning(f"⚠️ Nicht eindeutig: häufigstes **s = {s_guess}**")
                     st.write("Ergebnisse der Häufigkeitsanalyse:")
                     st.json(stimmen)
                     
