@@ -268,12 +268,12 @@ with tab1:
                     validierungsfehler = "❌ Die Zahl ist keine Primzahl."
                 elif p_input <= max(s, n):
                     eigene_p_gueltig = False
-                    validierungsfehler = f"❌ Die Primzahl muss größer als s = {s} und n = {n} sein."
+                    validierungsfehler = f"❌ Die Primzahl muss größer als *s = {s}* und *n = {n}* sein."
                 else:
                     p = p_input
             else:
                 eigene_p_gueltig = False
-                validierungsfehler = f"🪶 Bitte gib eine Primzahl größer als **n = {n}** und **s = {s}** ein."
+                validierungsfehler = f"🪶 Bitte gib eine Primzahl größer als *s = {s}* und *n = {n}* ein."
 
             if not eigene_p_gueltig:
                 st.error(validierungsfehler)
