@@ -273,7 +273,7 @@ with tab1:
                     p = p_input
             else:
                 eigene_p_gueltig = False
-                validierungsfehler = "🪶 Bitte gib eine Primzahl ein."
+                validierungsfehler = f"🪶 Bitte gib eine Primzahl größer als **n = {n}** und **s = {s}** ein."
 
             if not eigene_p_gueltig:
                 st.error(validierungsfehler)
