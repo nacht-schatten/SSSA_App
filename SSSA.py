@@ -163,9 +163,6 @@ def lagrange_interpolation_mod(x_vals, y_vals, p, k):
 
    
 
-#-----------------------------------
-#Autor: Johanna Vogel
-
 
 def konsistenzpruefung(punkte, k, p):
     '''
