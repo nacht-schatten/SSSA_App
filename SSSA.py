@@ -214,7 +214,7 @@ def konsistenzpruefung(punkte, k, p):
 import streamlit
 import streamlit as st
 
-st.set_page_config(page_title="Geheimnisteilung", layout="centered")
+st.set_page_config(page_title="Geheimnisteilung🔐", page_icon="🔐" layout="centered")
 st.title("🔐 Shamir’s Secret Sharing")
 
 tab1, tab2 = st.tabs(["➕ Anteile generieren", "🔍 Rekonstruktion"])
